@@ -7,4 +7,7 @@
 #define SYS_FREQ        8000000L
 #define FCY             SYS_FREQ/4
 
-void ConfigureOscillator(void); /* Handles clock switching/osc initialization */
+//needed for __delay functions
+#define _XTAL_FREQ      SYS_FREQ
+
+void ConfigureOscillator(void);

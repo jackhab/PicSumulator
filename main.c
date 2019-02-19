@@ -15,7 +15,7 @@ void main(void)
 
     InitApp();
     
-    printf("HELLO %sn\n", __TIME__);
+    printf("\nHELLO %s\n", __TIME__);
     while(1)
     {
 
