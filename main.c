@@ -1,25 +1,31 @@
-#include <xc.h>        /* XC8 General Include File */
-#include <stdint.h>        /* For uint8_t definition */
-#include <stdbool.h>       /* For true/false definition */
-#include <stdio.h>
-#include "system.h"        /* System funct/params, like osc/peripheral config */
-#include "user.h"          /* User funct/params, such as InitApp */
+#include "mcc_generated_files/mcc.h"
 
-
-
-
-
+/*
+                         Main application
+ */
 void main(void)
 {
-    ConfigureOscillator();
+    // Initialize the device
+    SYSTEM_Initialize();
 
-    InitApp();
-    
-    printf("\nHELLO %s\n", __TIME__);
-    while(1)
+    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
+    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
+    // Use the following macros to:
+
+    // Enable the Global Interrupts
+    //INTERRUPT_GlobalInterruptEnable();
+
+    // Disable the Global Interrupts
+    //INTERRUPT_GlobalInterruptDisable();
+
+    // Enable the Peripheral Interrupts
+    //INTERRUPT_PeripheralInterruptEnable();
+
+    // Disable the Peripheral Interrupts
+    //INTERRUPT_PeripheralInterruptDisable();
+
+    while (1)
     {
-
+        printf("HELLO\r\n");
     }
-
 }
-
